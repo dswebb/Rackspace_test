@@ -8,7 +8,8 @@
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[cpan::qos_modules]"
+    "recipe[users::sysadmins]",
+    "recipe[sudo]"
   ],
   "env_run_lists": {
   }
