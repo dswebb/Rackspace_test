@@ -1,9 +1,0 @@
-{
-  "id": "candidate",
-  "username": "candidate",
-  "uid": "2001",
-  "gid": "2001",
-  "groups": ["sysadmin"],
-  "shell": "/bin/bash",
-  "action": "create"
-}
