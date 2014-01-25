@@ -1,0 +1,16 @@
+{
+  "name": "Base Linux Configuration",
+  "description": "Base Linux Config all hosts should have",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[cpan::qos_modules]"
+  ],
+  "env_run_lists": {
+  }
+}
+
