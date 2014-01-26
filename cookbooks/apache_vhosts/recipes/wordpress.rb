@@ -11,9 +11,9 @@ vhost_array.each do |vhost|
     group  'root'
     variables(
       :docroot    => node['apache_vhost'][vhost]['DocumentRoot'],
-      :serveradmin     => node['apache_vhost'][vhost}]['ServerAdmin'],
+      :serveradmin     => node['apache_vhost'][vhost]['ServerAdmin'],
       :servername     => node['apache_vhost'][vhost]['ServerName'],
-      :serveralias      => node['apache_vhost'][vhost}]['ServerAlias'],
+      :serveralias      => node['apache_vhost'][vhost]['ServerAlias'],
     )
   end
 end
