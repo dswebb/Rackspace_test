@@ -11,7 +11,8 @@
     "recipe[users::sysadmins]",
     "recipe[sudo]",
     "recipe[fail2ban]",
-    "recipe[ntp]"
+    "recipe[ntp]",
+    "recipe[postfix]"
   ],
   "env_run_lists": {
   }
