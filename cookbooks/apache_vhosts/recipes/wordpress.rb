@@ -1,6 +1,6 @@
 # create VirtualHosts
 
-prefix = node['apache_vhosts']['prefix']
+prefix = node['apache_vhosts']['config_prefix']
 
 node['apache_vhosts']['vhosts'].each do |vhost| 
   template "#{prefix}/#{vhost}.conf" do
