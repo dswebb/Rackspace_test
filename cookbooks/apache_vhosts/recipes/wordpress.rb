@@ -1,8 +1,8 @@
 # create VirtualHosts
 
-prefix = node['apache_vhosts']['config_prefix']
+prefix = node['apache_vhost']['config_prefix']
 
-node['apache_vhosts']['vhosts'].each do |vhost| 
+node['apache_vhost']['vhosts'].each do |vhost| 
   template "#{prefix}/#{vhost}.conf" do
     source 'vhost.erb'
     mode   '0440'
