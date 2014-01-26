@@ -31,7 +31,7 @@ default['wordpress']['db']['pass'] = "YsbaFTP875qn_xKqQWY5"
 default['wordpress']['db']['prefix'] = 'wp_'
 default['wordpress']['db']['host'] = 'localhost'
 
-default['wordpress']['server_aliases'] = [node['fqdn']]
+default['wordpress']['server_aliases'] = ['cms-deploy-test-lin', 'lin-test.rackstage.co.uk'] 
 
 default['wordpress']['hostname'] = 'lin-test.rackstage.co.uk'
 
