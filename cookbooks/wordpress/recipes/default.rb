@@ -39,6 +39,13 @@ node.set_unless['wordpress']['salt']['logged_in'] = secure_password
 node.set_unless['wordpress']['salt']['nonce'] = secure_password
 node.save unless Chef::Config[:solo]
 
+directory "/var/www/vhost/#{node['wordpress']['hostname']}" do
+  action :create
+  owner 'root'
+  group 'root'
+  mode '0755'
+end
+
 directory node['wordpress']['dir'] do
   action :create
   if platform_family?('windows')
@@ -48,13 +55,6 @@ directory node['wordpress']['dir'] do
     group 'root'
     mode  '00755'
   end
-end
-
-directory "/var/www/vhost/#{node['wordpress']['hostname']}" do
-  action :create
-  owner 'root'
-  group 'root'
-  mode '0755'
 end
 
 archive = platform_family?('windows') ? 'wordpress.zip' : 'wordpress.tar.gz'
