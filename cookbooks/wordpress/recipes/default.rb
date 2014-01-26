@@ -50,6 +50,13 @@ directory node['wordpress']['dir'] do
   end
 end
 
+directory "/var/www/vhost/#{node['wordpress']['hostname']}" do
+  action :create
+  owner 'root'
+  group 'root'
+  mode '0755'
+end
+
 archive = platform_family?('windows') ? 'wordpress.zip' : 'wordpress.tar.gz'
 
 if platform_family?('windows')
