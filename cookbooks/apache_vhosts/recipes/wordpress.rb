@@ -1,9 +1,9 @@
 # create VirtualHosts
 
 prefix = node['apache_vhost']['config_prefix']
-@vhost_array = node['apache_vhost']['vhosts']
+vhost_array = node['apache_vhost']['vhosts']
 
-@vhost_array.each |vhost| 
+vhost_array.each |vhost| 
   template "#{prefix}/#{vhost}.conf" do
     source 'vhost.erb'
     mode   '0440'
