@@ -1,5 +1,7 @@
 # create VirtualHosts
 
+prefix = node['apache_vhost']['config_prefix']
+
 template "#{prefix}/wordpress.conf" do
   source 'vhost.erb'
   mode   '0440'
