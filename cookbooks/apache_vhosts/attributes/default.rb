@@ -1,5 +1,5 @@
 default['apache_vhost']['vhosts'] = { 
-					'wordpress' = {
+					'wordpress' => {
 						'ServerAdmin'        = '',
 						'ServerName'        = 'cms-deploy-test-lin',
 						'ServerAlias'        = ['cms-deploy-test-lin', 'lin-test.rackstage.co.uk'],
