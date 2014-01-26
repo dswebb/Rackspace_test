@@ -7,11 +7,11 @@ node['apache_vhost']['vhosts'].each do |vhost|
     source 'vhost.erb'
     mode   '0440'
     owner  'root'
-    group  node['root_group']
+    group  'root'
     variables(
-      :docroot    => node['apache_vhost'][vhost]['DocumentRoot'],
-      :serveradmin     => node['apache_vhost'][vhost]['ServerAdmin'],
-      :servername     => node['apache_vhost'][vhost]['ServerName'],
-      :serveralias      => node['apache_vhost'][vhost]['ServerAlias'],
+      :docroot    => node['apache_vhost'][:vhost]['DocumentRoot'],
+      :serveradmin     => node['apache_vhost'][:vhost]['ServerAdmin'],
+      :servername     => node['apache_vhost'][:vhost]['ServerName'],
+      :serveralias      => node['apache_vhost'][:vhost]['ServerAlias'],
     )
 end
