@@ -1,9 +1,9 @@
 <VirtualHost *:80>
-   ServerAdmin <%= node['apache_vhosts']['ServerAdmin'] %>
-   ServerName <%= node['apache_vhosts']['ServerName'] %>
-   DocumentRoot <%= node['apache_vhosts']['DocumentRoot'] %>
+   ServerAdmin <%= serveradmin %>
+   ServerName <%= servername %>
+   DocumentRoot <%= docroot %>
     
-   <Directory <%= node['apache_vhosts']['DocumentRoot'] %>>
+   <Directory <%= docroot %>>
       Options Indexes FollowSymLinks MultiViews
       AllowOverride ALL
       Order allow,deny
@@ -16,11 +16,11 @@
   </Directory>
 
   LogLevel info
-  ErrorLog /var/log/apache2/<%= node['apache_vhosts']['ServerName'] %>-error.log
-  CustomLog /var/log/apache2/<%= node['apache_vhosts']['ServerName'] %>-access.log combined
+  ErrorLog /var/log/apache2/<%= servername %>-error.log
+  CustomLog /var/log/apache2/<%= servername %>-access.log combined
 
   RewriteEngine On
-  RewriteLog /var/log/apache2/<%= node['apache_vhosts']['ServerName'] %>-rewrite.log
+  RewriteLog /var/log/apache2/<%= servername %>-rewrite.log
   RewriteLogLevel 0
 
 </VirtualHost>
