@@ -25,13 +25,16 @@
 # General settings
 default['wordpress']['version'] = 'latest'
 
-default['wordpress']['db']['name'] = "wordpressdb"
-default['wordpress']['db']['user'] = "wordpressuser"
-default['wordpress']['db']['pass'] = nil
+default['wordpress']['db']['name'] = "lintest_wpdb"
+default['wordpress']['db']['user'] = "lintest_user"
+default['wordpress']['db']['pass'] = "YsbaFTP875qn_xKqQWY5"
 default['wordpress']['db']['prefix'] = 'wp_'
 default['wordpress']['db']['host'] = 'localhost'
 
 default['wordpress']['server_aliases'] = [node['fqdn']]
+
+default['wordpress']['hostname'] = 'lin-test.rackstage.co.uk'
+
 
 # Languages
 default['wordpress']['languages']['lang'] = ''
@@ -61,7 +64,7 @@ if platform_family?('windows')
   default['wordpress']['dir'] = "#{node['wordpress']['parent_dir']}\\wordpress"
   default['wordpress']['url'] = "https://wordpress.org/wordpress-#{node['wordpress']['version']}.zip"
 else
-  default['wordpress']['parent_dir'] = '/var/www'
+  default['wordpress']['parent_dir'] = '/var/www/vhost/#{node['wordpress']['hostname']}'
   default['wordpress']['dir'] = "#{node['wordpress']['parent_dir']}/wordpress"
   default['wordpress']['url'] = "https://wordpress.org/wordpress-#{node['wordpress']['version']}.tar.gz"
 end
