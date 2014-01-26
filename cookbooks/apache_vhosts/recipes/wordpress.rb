@@ -2,7 +2,7 @@
 
 prefix = node['apache_vhost']['config_prefix']
 
-node['apache_vhost']['vhosts'].each do |vhost| 
+node['apache_vhost'].each do |vhost| 
   template "#{prefix}/#{vhost}.conf" do
     source 'vhost.erb'
     mode   '0440'
