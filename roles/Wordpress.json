@@ -14,7 +14,8 @@
     "recipe[apache2::mod_php5]",
     "recipe[apache2::mod_headers]",
     "recipe[apache2::mod_rewrite]",
-    "recipe[php]"
+    "recipe[php]",
+    "recipte[apache_vhosts::wordpress]"
   ],
   "env_run_lists": {
   }
