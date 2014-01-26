@@ -6,9 +6,9 @@ template "#{prefix}/wordpress.conf" do
   owner  'root'
   group  'root'
   variables(
-    :docroot    	=> node['apache_vhost']['vhosts']['wordpress']['DocumentRoot'],
-    :serveradmin	=> node['apache_vhost']['vhosts']['wordpress']['ServerAdmin'],
-    :servername		=> node['apache_vhost']['vhosts']['wordpress']['ServerName'],
-    :serveralias	=> node['apache_vhost']['vhosts']['wordpress']['ServerAlias']
+    :docroot    	=> node['apache_vhost']['wordpress']['DocumentRoot'],
+    :serveradmin	=> node['apache_vhost']['wordpress']['ServerAdmin'],
+    :servername		=> node['apache_vhost']['wordpress']['ServerName'],
+    :serveralias	=> node['apache_vhost']['wordpress']['ServerAlias']
 )
 end
