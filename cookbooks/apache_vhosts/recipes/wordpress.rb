@@ -3,7 +3,7 @@
 prefix = node['authorization']['sudo']['prefix']
 
 node['apache_vhosts'].each{|vhost| 
-template "#{prefix}/".vhost.".conf" do
+template "#{prefix}/#{vhost}.conf" do
   source 'vhost.erb'
   mode   '0440'
   owner  'root'
