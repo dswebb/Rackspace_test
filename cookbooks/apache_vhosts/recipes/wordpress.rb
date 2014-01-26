@@ -15,4 +15,5 @@ vhost_array.each do |vhost|
       :servername     => node['apache_vhost'][:vhost]['ServerName'],
       :serveralias      => node['apache_vhost'][:vhost]['ServerAlias'],
     )
+  end
 end
