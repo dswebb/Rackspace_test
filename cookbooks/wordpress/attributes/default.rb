@@ -64,7 +64,7 @@ if platform_family?('windows')
   default['wordpress']['dir'] = "#{node['wordpress']['parent_dir']}\\wordpress"
   default['wordpress']['url'] = "https://wordpress.org/wordpress-#{node['wordpress']['version']}.zip"
 else
-  default['wordpress']['parent_dir'] = '/var/www/vhost/#{node['wordpress']['hostname']}'
+  default['wordpress']['parent_dir'] = "/var/www/vhost/#{node['wordpress']['hostname']}"
   default['wordpress']['dir'] = "#{node['wordpress']['parent_dir']}/wordpress"
   default['wordpress']['url'] = "https://wordpress.org/wordpress-#{node['wordpress']['version']}.tar.gz"
 end
