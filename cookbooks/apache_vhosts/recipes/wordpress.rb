@@ -10,10 +10,10 @@ vhost_array.each do |vhost|
     owner  'root'
     group  'root'
     variables(
-      :docroot    => node['apache_vhost']['vhosts']["#{vhost}"]['DocumentRoot'],
-      :serveradmin     => node['apache_vhost']['vhosts']["#{vhost}"]['ServerAdmin'],
-      :servername     => node['apache_vhost']['vhosts']["#{vhost}"]['ServerName'],
-      :serveralias      => node['apache_vhost']['vhosts']["#{vhost}"]['ServerAlias'],
+      :docroot    	=> node['apache_vhost']['vhosts']["#{vhost}"]['DocumentRoot'],
+      :serveradmin	=> node['apache_vhost']['vhosts']["#{vhost}"]['ServerAdmin'],
+      :servername	=> node['apache_vhost']['vhosts']["#{vhost}"]['ServerName'],
+      :serveralias      => node['apache_vhost']['vhosts']["#{vhost}"]['ServerAlias']
     )
   end
 end
