@@ -1,5 +1,5 @@
 {
-  "name": "Base Linux Configuration",
+  "name": "Base_Linux_Configuration",
   "description": "Base Linux Config all hosts should have",
   "json_class": "Chef::Role",
   "default_attributes": {
@@ -9,7 +9,9 @@
   "chef_type": "role",
   "run_list": [
     "recipe[users::sysadmins]",
-    "recipe[sudo]"
+    "recipe[sudo]",
+    "recipe[fail2ban]",
+    "recipe[ntp]"
   ],
   "env_run_lists": {
   }
