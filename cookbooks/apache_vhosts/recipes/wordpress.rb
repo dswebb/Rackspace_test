@@ -4,7 +4,7 @@ prefix = node['apache_vhost']['config_prefix']
 vhost_array = node['apache_vhost']['vhosts']
 
 vhost_array.each do |vhost| 
-  template "#{prefix}/#{vhost}.conf" do
+  template "#{prefix}/vhost.conf" do
     source 'vhost.erb'
     mode   '0440'
     owner  'root'
