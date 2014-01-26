@@ -1,15 +1,26 @@
 <VirtualHost *:80>
-   ServerAdmin <%= @params[:server_email] %>
-   ServerName <%= @params[:server_name] %>
-   DocumentRoot <%= @params[:docroot] %>
+   ServerAdmin <%= node['apache_vhosts']['ServerAdmin'] %>
+   ServerName <%= node['apache_vhosts']['ServerName'] %>
+   DocumentRoot <%= node['apache_vhosts']['DocumentRoot'] %>
     
-   <Directory <%= @params[:docroot] %>>
+   <Directory <%= node['apache_vhosts']['DocumentRoot'] %>>
       Options Indexes FollowSymLinks MultiViews
       AllowOverride ALL
       Order allow,deny
       Allow from all
    </Directory>
-  
-   ErrorLog ${APACHE_LOG_DIR}/<%= @params[:server_name] %>.log
-   LogLevel debug
+
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride None
+  </Directory>
+
+  LogLevel info
+  ErrorLog /var/log/apache2/<%= node['apache_vhosts']['ServerName'] %>-error.log
+  CustomLog /var/log/apache2/<%= node['apache_vhosts']['ServerName'] %>-access.log combined
+
+  RewriteEngine On
+  RewriteLog /var/log/apache2/<%= node['apache_vhosts']['ServerName'] %>-rewrite.log
+  RewriteLogLevel 0
+
 </VirtualHost>
