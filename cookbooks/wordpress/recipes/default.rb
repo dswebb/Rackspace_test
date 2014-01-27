@@ -39,18 +39,19 @@ node.set_unless['wordpress']['salt']['logged_in'] = secure_password
 node.set_unless['wordpress']['salt']['nonce'] = secure_password
 node.save unless Chef::Config[:solo]
 
-directory "/var/www/vhost" do
-  action :create
-  owner 'root'
-  group 'root'
-  mode '0755'
-end
+#directory "/var/www/vhost" do
+#  action :create
+#  owner 'root'
+#  group 'root'
+#  mode '0755'
+#end
 
 directory "/var/www/vhost/#{node['wordpress']['hostname']}" do
   action :create
   owner 'root'
   group 'root'
   mode '0755'
+  recursive true
 end
 
 directory node['wordpress']['dir'] do
