@@ -3,6 +3,9 @@
   "description": "Windows CMS role",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "iis" => {
+      "accept_eula" => true
+    }
   },
   "override_attributes": {
     "mysql" : { "server_root_password": "temppassword2014" }
