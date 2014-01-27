@@ -1,0 +1,19 @@
+{
+  "name": "Windows_CMS",
+  "description": "Windows CMS role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "mysql" : { "server_root_password": "temppassword2014" }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[mysql::server]",
+    "recipe[php]",
+    "recipte[iis]"
+  ],
+  "env_run_lists": {
+  }
+}
+
