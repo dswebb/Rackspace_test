@@ -5,7 +5,7 @@
   "default_attributes": {
   },
   "override_attributes": {
-    "mysql" : { "server_root_password": "temppassword2014" }
+    "mysql" : { "server_root_password": "qjhtLOiekxWz0BzpDEn0" }
   },
   "chef_type": "role",
   "run_list": [
